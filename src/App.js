@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import './reset.css'
+import './global.css';
+import './layoutBody.css';
+import List from './components/List/userList';
 
-function App() {
+
+export default () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <>
+      <header>
+        {/* Aqui ficará o logo da Newtab a foto do usuário e o nome do usuário.. */}
 
-export default App;
+        <nav></nav>
+      </header>
+
+      <main>
+        {/* Aqui ficará a lista de usuários.. */}
+        <section>
+          <List />
+         
+        </section>
+      </main>
+
+      <footer>
+        {/* Aqui ficará os links para o github e para o linkedin e um copyright.. */}
+      </footer>
+    </>
+  );
+};

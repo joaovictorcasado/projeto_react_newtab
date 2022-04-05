@@ -1,0 +1,28 @@
+:root{
+  
+  /* Colors */
+  --background_color1: #373957
+  --background_color2: #2E3047;
+  --background_color3: #27283A;
+  --primary_color: #fff;
+  --secundary_color:#000;
+  /* Fonts */
+  --font_primary_family:'Roboto', sans-serif;
+  --user_font_family:'Poppins', sans-serif;
+  --user_color:#d1da59;
+
+  
+
+
+}
+
+body{
+/* Global settings */     
+  background-image: linear-gradient(to top right, #373957,#2E3047, #27283A );
+  background-image: linear-gradient(to bottom left, #27283A,#2E3047, #373957 );
+  font-family: var(--font_primary_family);
+  color: var(--primary_color);
+  font-size: 1.1em;
+  
+}
+
