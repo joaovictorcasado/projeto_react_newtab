@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/projeto_react_newtab/static/css/main.249d6d3e.css",
+    "main.js": "/projeto_react_newtab/static/js/main.8786106f.js",
+    "index.html": "/projeto_react_newtab/index.html",
+    "main.249d6d3e.css.map": "/projeto_react_newtab/static/css/main.249d6d3e.css.map",
+    "main.8786106f.js.map": "/projeto_react_newtab/static/js/main.8786106f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.249d6d3e.css",
+    "static/js/main.8786106f.js"
+  ]
+}
