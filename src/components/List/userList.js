@@ -18,7 +18,7 @@ export default () => {
     <>
       {user.map((peoples) => (
         <div className={style.grid_container}>
-          <div className={style.grid_item}>
+          <div className={` ${style.image_item} ${style.grid_item}`}>
             <img
               id={style.peoples_image}
               key={peoples.img}
