@@ -1,0 +1,128 @@
+
+
+.container {
+  display: flex;
+  /* display: grid; */
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  width: 100%;
+  /* height: 600px; */
+  /* width: 800px; */
+  /* width: 400px; */
+  /* height: 400px; */
+  /* min-width: 100%; */
+  /* min-width: 475px; */
+  background-color: #fff;
+  position: absolute;
+  z-index: 2;
+  justify-content: center;
+  top: 0;
+  right:0px;
+}
+
+/* Esse é o container do botao*/
+.nav_container {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  margin: 0 0 40px;
+  width: 100%;
+  height: 90px;
+  /* min-width: 100vh; */
+  align-items: center;
+  background-color: rgb(103, 71, 196, 1);
+  /* justify-content: space-around; */
+
+}
+
+.nav_container h1 {
+
+  /* color: black; */
+  text-align: center;
+  /* border: solid brown; */
+  padding-left: 30px;
+  /* border-radius: 5px; */
+  /* background-color: var(--background_color1); */
+  /* margin-left: 40px; */
+  /* justify-content: center; */
+
+}
+
+.user_fonts{
+font-family: var(--user_font_family);
+color: var(--user_color);
+font-weight: 700;
+filter: brightness(1.2);
+font-style: italic;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+.container input {
+  width:  60%;
+  padding: 24px;
+  margin-bottom: 20px;
+  background-color: #e6e6e6;
+  border-radius: 5px;
+  border: none;
+  font-size: 1em;
+  min-width: 300px;
+
+}
+.container select {
+  max-width: 610px;
+  width: 66.7%;
+  padding: 24px;
+  background-color: #e6e6e6;
+  border-radius: 5px;
+  border: none;
+  font-size: 1em;
+  font-family: var(--font_primary_family);
+  font-weight: 600;
+  min-width: 350px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  
+}
+
+
+
+#close_tab {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #fff;
+  border-radius: unset;
+  width: 40px;
+  padding: 5px 0 5px 0;
+  font-weight: 700;
+  margin: 0;
+  min-width: unset;
+}
+
+
+
+.container button {
+  width: 50%;
+  padding: 24px;
+  font-weight: 700;
+  /* background-color: #ea4c89; */
+  background-color: rgb(103, 71, 196, 1);
+  min-width: 350px;
+  color: #fff;
+  border-radius: 5px;
+  margin: 12px 0 84px;
+  cursor: pointer;
+  font-size: 1em;
+  border: none;
+  transition: filter 0.2s;
+
+}
+
+
+
+ button:hover {
+  filter: brightness(0.9);
+
+}

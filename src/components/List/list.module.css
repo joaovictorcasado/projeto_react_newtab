@@ -2,17 +2,22 @@
   display: grid;
   width: 80%;
   max-width: 85%;
+  position: relative;
+  /* max-height: 800px; */
   margin: auto;
   align-items: center;
   grid-template-columns: 0.1fr 1.8fr 0.7fr;
+  grid-template-rows: auto;
   border-radius: 10px 10px 0 0;
-  border-bottom: solid #fff 0.1px;
-  min-width: 350px;
+  /* border: solid red 2px; */
+  /* border-bottom: solid #fff 0.1px; */
+  /* min-width: 350px; */
   box-shadow: inset 0px 0px 100px 30px var(--background_color3);
 }
 
 .grid_item {
   margin: 30px 0 30px 0;
+  /* position: relative; */
 }
 
 .grid_container:last-child {
@@ -23,6 +28,11 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+
+/* .modal {
+position:absolute
+} */
 
 .btn_item {
   text-align: center;

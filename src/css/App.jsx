@@ -1,10 +1,18 @@
-import './reset.css'
-import './global.css';
+import './reset.css';
+import './global.css'
 import './layoutBody.css';
-import List from './components/List/userList';
+// Original
+// import List from '../components/List/userList';
+
+//Copia
+import List from '../components/List/userList copy';
 
 
-export default () => {
+
+// import Payment from './components/Payment/home';
+
+
+function App ()  {
   return (
     <>
       <header>
@@ -14,10 +22,10 @@ export default () => {
       </header>
 
       <main>
-        {/* Aqui ficará a lista de usuários.. */}
+        {/* Aqui ficará a lista de usuários.. e a parte do modal */}
         <section>
           <List />
-         
+          {/* <Payment /> */}
         </section>
       </main>
 
@@ -27,3 +35,5 @@ export default () => {
     </>
   );
 };
+
+export default App
