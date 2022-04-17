@@ -1,18 +1,13 @@
-import './reset.css';
-import './global.css'
-import './layoutBody.css';
+import './css/reset.css';
+import './css/global.css';
+
 // Original
 // import List from '../components/List/userList';
 
 //Copia
 import List from '../components/List/userList copy';
 
-
-
-// import Payment from './components/Payment/home';
-
-
-function App ()  {
+function App() {
   return (
     <>
       <header>
@@ -25,7 +20,6 @@ function App ()  {
         {/* Aqui ficará a lista de usuários.. e a parte do modal */}
         <section>
           <List />
-          {/* <Payment /> */}
         </section>
       </main>
 
@@ -34,6 +28,6 @@ function App ()  {
       </footer>
     </>
   );
-};
+}
 
-export default App
+export default App;

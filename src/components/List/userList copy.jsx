@@ -1,12 +1,10 @@
-import Payment from '../Payment/home';
+import Payment from '../Payment/Modal/modal';
 import style from './list.module.css';
 import { useState, useEffect } from 'react';
 
 function List() {
-  // Referente ao primeiro evento, que irá carregar a lista de usuários..
-  // Será carregado automaticamente, quando a página carregar..
-  // Estado inicia vazio, depois recebe os dados (data)
-  const [user, setUser] = useState([]);
+  /* O fetch irá pegar os dados do usuário como: nome, username, id e foto.
+  Já o useEffect fará com que a solititação não entre em loop */
   useEffect(() => {
     fetch('https://www.mocky.io/v2/5d531c4f2e0000620081ddce')
       .then((response) => response.json())
@@ -14,168 +12,77 @@ function List() {
       .catch((Error) => console.log(Error));
   }, []);
 
-  // State que fará o modal abrir..
+  // Hooks Utilizados na lista:
+
+  // Irá pegar o usuario quando clicar em pagar, atualiza-lo e exporta-lo como uma prop
+  const [selectUser, setSelectUser] = useState(null);
+
+  // Inicia o modal, e em seguida atualiza o modal
   const [modalVisible, setModalVisible] = useState(false);
 
-  // console.log(!!setModalVisible)
-  // function modalStatus(peoples) {
-  //   // console.log(!!setModalVisible)
+  // É utilizado no método map, para retornar um array com os dados obtidos do fetch
+  const [user, setUser] = useState([]);
 
-  //   // Abre o modal
+  const [showUser, setShowUser] = useState(true);
+  /* Realiza a renderização do modal, listando o username 
+  e alterando o state de setModalVisible para true */
+  const renderModal = (username) => {
+    setSelectUser(username);
+    setModalVisible(true);
 
-  //   const newState = [peoples];
-  //   setUser(newState);
-  //   setModalVisible(true);
+    const width = window.matchMedia('(max-width: 500px)');
+    width.matches ? setShowUser(false) : setShowUser(true);
+  };
 
-  //   // if (!modalVisible) {
-  //   //   const newState = [peoples];
-  //   //   setUser(newState);
-  //   //   console.log(newState);
-  //   //   setModalVisible(true);
-  //   // } else {
-  //   //   setUser(user);
-  //   //   console.log(setUser(user));
-  //   // }
-
-  //   // se o modalVisible for falso irá pegar um usuario
-
-  //   // limpa a lista
-  // }
-
-  // if (setModalVisible === true) {
-  //     const newStatus = [peoples];
-  //   setUser(newStatus);
-
-  // } else {
-  //   setModalVisible(true);
-
-  // }
-  // }
-  //   // setUser((prevState) => [...prevState, newStatus]);
-  // }
-
-  // const fecharModal = () =>{
-  //   setModalVisible(false)
-  //   setUser(data)
-  // }
-
-  // setUser (newStatus)
-
-  // const newStatus = user.filter((peoples) => peoples.id !== id );
-  // console.log(newStatus)
-  // console.log(newStatus)
-  // setUser (newStatus)
-  // setModalVisible(newStatus)
-
-  //  function modalStatus() {
-
-  //   // const newStatus = user.splice(user, user);
-  //   const newStatus = user.pop(user)
-  //   console.log(newStatus)
-
-  //   setUser (newStatus)
-  //   setModalVisible(true)
-
-  // }
-
-  // Função de remover item.
-  // function modalStatus() {
-  //   // setUser([])
-  //   // console.log(setUser)
-
-  //   const newStatus = user.filter((peoples) => peoples.id );
-  //   const teste = [newStatus]
-  //   setUser(teste)
-  //   console.log(teste)
-  //   // console.log(newStatus)
-  //   // setUser (newStatus)
-  //   // setModalVisible(true)
-
-  // }
-
-  //   if (modalVisible === true) {
-
-  //     console.log('teste..')
-
-  //     // setUser(newUser)
-
-  //   }
-
-  // }
-
-  // function modalAtive(){
-
-  //   const userEmpty = user.splice(0, user.length)
-  //   console.log(userEmpty)
-
-  //   setUser(user)
-  //   console.log(user)
-
-  // }
+  const whenClose = () => {
+    setShowUser(true);
+    setModalVisible(false);
+  };
 
   /* Lista Container Grid */
   return (
     <>
-      {user.map((peoples) => (
-        <div key={peoples.id} className={style.grid_container}>
-          <div className={` ${style.image_item} ${style.grid_item}`}>
-            <img id={style.peoples_image} src={peoples.img} alt="peoples" />
-          </div>
-          <div className={style.grid_item}>
-            <p>
-              {' '}
-              {`Nome do Usuário: `}
-              <span> {peoples.name} </span>
-            </p>
-            <div className={style.flex_container}>
-              <p className={style.paragraph}>
-                <span> {` ID: #${peoples.id} `} - </span>
-                {` Username: `}
+      {/* Ira retornar os usuarios listados do fetch em um novo array */}
+      {showUser ? (
+        <>
+          {user.map((peoples) => (
+            <div key={peoples.id} className={style.grid_container}>
+              <div className={` ${style.image_item} ${style.grid_item}`}>
+                <img id={style.peoples_image} src={peoples.img} alt="peoples" />
+              </div>
 
-                <span className={style.user_fonts}>{peoples.username}</span>
-              </p>
+              <div className={style.grid_item}>
+                <p>
+                  {' '}
+                  {`Nome do Usuário: `}
+                  <span> {peoples.name} </span>
+                </p>
+                <div className={style.flex_container}>
+                  <p className={style.paragraph}>
+                    <span> {` ID: #${peoples.id} `} - </span> {` Username: `}
+                    <span className={style.user_fonts}>{peoples.username}</span>
+                  </p>
+                </div>
+              </div>
+
+              <div className={` ${style.btn_item} ${style.grid_item}`}>
+                <button
+                  type="button"
+                  id={style.btn}
+                  onClick={() => renderModal(peoples.username)}
+                >
+                  Pagar
+                </button>
+              </div>
             </div>
-          </div>
+          ))}
+        </>
+      ) : null}
 
-          <div className={` ${style.btn_item} ${style.grid_item}`}>
-            {/* <button id={style.btn} onClick={() => modalStatus(peoples)}> */}
-            <button id={style.btn} onClick={(e) => {
-              debugger
-              setModalVisible(true)}  }>
-              {/* <button id={style.btn} onClick={() => modalStatus(peoples.id)}> */}
-              {/* <button id={style.btn} onClick={() => setUser(data) }> */}
-              {/* onClick={() => setModalVisible(true)} */}
-              {/* onClick={()=> getName(peoples.name) */}
-              Pagar
-            </button>
-            
-            {/* {modalVisible ? <> <Payment name={peoples.name}/> </>  : null} */}
-          </div>
-          {/* {modalVisible ? <> <Payment name={() => peopleDate(peoples.name)}/> </>  : null} */}
-
-          {/* <Payment  name={peoples.name} /> */}
-        </div>
-        // finish map
-      ))}
       {modalVisible ? (
-              <Payment
-                name={'teste'}
-                close={() => setModalVisible(false)}
-
-                // ? console.log('teste'): console.log(setUser(user)
-
-                // name={peoples.name}
-                // close={() =>
-                //   setModalVisible(false) ? console.log('teste'): console.log(setUser(user.peoples))
-                // }
-
-                // close={()=> setModalVisible(false) `${setUser(user)}`}
-
-                // close={()=> fecharModal(setModalVisible(false))}
-                // fechar={() => setModalVisible(false)}
-              />
-            ) : null}
-      
+        // Componente que será enviado como propriedade
+        <Payment username={selectUser} closeBtn={() => whenClose()} />
+      ) : null}
     </>
   );
 }

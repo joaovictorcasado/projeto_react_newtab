@@ -1,27 +1,25 @@
-
-
 .container {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 5;
+  top: 0;
+}
+
+.modal_container {
   display: flex;
-  /* display: grid; */
   align-items: center;
   flex-direction: column;
   margin: auto;
-  width: 100%;
-  /* height: 600px; */
-  /* width: 800px; */
-  /* width: 400px; */
-  /* height: 400px; */
-  /* min-width: 100%; */
-  /* min-width: 475px; */
+  margin-top: 80px;
+  width: 70%;
+  max-width: 85%;
   background-color: #fff;
-  position: absolute;
-  z-index: 2;
   justify-content: center;
-  top: 0;
-  right:0px;
+  min-width: 400px;
 }
 
-/* Esse é o container do botao*/
 .nav_container {
   box-sizing: border-box;
   position: relative;
@@ -29,38 +27,27 @@
   margin: 0 0 40px;
   width: 100%;
   height: 90px;
-  /* min-width: 100vh; */
   align-items: center;
   background-color: rgb(103, 71, 196, 1);
-  /* justify-content: space-around; */
-
 }
 
 .nav_container h1 {
-
-  /* color: black; */
   text-align: center;
-  /* border: solid brown; */
   padding-left: 30px;
-  /* border-radius: 5px; */
-  /* background-color: var(--background_color1); */
-  /* margin-left: 40px; */
-  /* justify-content: center; */
-
 }
 
-.user_fonts{
-font-family: var(--user_font_family);
-color: var(--user_color);
-font-weight: 700;
-filter: brightness(1.2);
-font-style: italic;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
+.user_fonts {
+  font-family: var(--user_font_family);
+  color: var(--user_color);
+  font-weight: 700;
+  filter: brightness(1.2);
+  font-style: italic;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .container input {
-  width:  60%;
+  width: 60%;
   padding: 24px;
   margin-bottom: 20px;
   background-color: #e6e6e6;
@@ -68,7 +55,6 @@ font-style: italic;
   border: none;
   font-size: 1em;
   min-width: 300px;
-
 }
 .container select {
   max-width: 610px;
@@ -83,10 +69,7 @@ font-style: italic;
   min-width: 350px;
   margin-bottom: 10px;
   cursor: pointer;
-  
 }
-
-
 
 #close_tab {
   position: absolute;
@@ -97,17 +80,14 @@ font-style: italic;
   width: 40px;
   padding: 5px 0 5px 0;
   font-weight: 700;
-  margin: 0;
+  margin-top: 0px;
   min-width: unset;
 }
 
-
-
-.container button {
+.container .payment_btn, .container button{
   width: 50%;
   padding: 24px;
   font-weight: 700;
-  /* background-color: #ea4c89; */
   background-color: rgb(103, 71, 196, 1);
   min-width: 350px;
   color: #fff;
@@ -117,12 +97,24 @@ font-style: italic;
   font-size: 1em;
   border: none;
   transition: filter 0.2s;
-
 }
 
 
 
- button:hover {
-  filter: brightness(0.9);
 
+
+button:hover, .payment_btn:hover {
+  filter: brightness(0.9);
+}
+
+/* Break point */
+
+@media screen and (max-width: 500px) {
+  .modal_container {
+    max-width: unset;
+    width: 100%;
+    min-width: 360px;
+    justify-content: unset;
+    border: solid black px;
+  }
 }
