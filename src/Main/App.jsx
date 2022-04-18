@@ -5,7 +5,7 @@ import './css/global.css';
 // import List from '../components/List/userList';
 
 //Copia
-import List from '../components/List/userList copy';
+import List from '../components/List/userList';
 
 function App() {
   return (
