@@ -17,7 +17,7 @@
   max-width: 85%;
   background-color: #fff;
   justify-content: center;
-  min-width: 400px;
+  min-width: 450px;
 }
 
 .nav_container {
@@ -113,7 +113,8 @@ button:hover, .payment_btn:hover {
   .modal_container {
     max-width: unset;
     width: 100%;
-    min-width: 360px;
+    /* min-width: 360px; */
+    min-width: 450px;
     justify-content: unset;
     border: solid black px;
   }

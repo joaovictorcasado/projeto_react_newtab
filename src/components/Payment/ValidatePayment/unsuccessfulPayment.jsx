@@ -7,7 +7,7 @@ function Rejectd() {
 
   return (
     <>
-      <p style={{ color: '#000', fontWeight: '500', fontSize:'1.2em', margin:'40px 0 40px 0'  }}>
+      <p style={{ color: '#000', fontWeight: '500', fontSize:'1.2em', margin:'40px 0 40px 0', whiteSpace:'nowrap'  }}>
         Não foi possivel continuar {' '}
         <span  style={{ color: '#f00', fontWeight: '600' }}> pagamento mal-sucedido</span>
       </p>

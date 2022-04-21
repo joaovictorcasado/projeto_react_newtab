@@ -8,12 +8,12 @@ function Aproved({ username }) {
 
   return (
     <>
-      <p style={{ color: '#000', fontWeight: '500', fontSize:'1.2em', margin:'40px 0 40px 0' }}>
-        O Pagamento foi concluido com {' '}
+      <p style={{ color: '#000', fontWeight: '500', fontSize:'1.2em', margin:'40px 0 40px 0', whiteSpace:'nowrap' }}>
+       Pagamento concluido para  {' '}
         <span
           style={{ color: '#222fff', fontWeight: '600', fontStyle: 'italic' }}
         >
-          sucesso
+         {username}
         </span>
       </p>
       <br />

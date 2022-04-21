@@ -1,10 +1,7 @@
 import './css/reset.css';
 import './css/global.css';
 
-// Original
-// import List from '../components/List/userList';
 
-//Copia
 import List from '../components/List/userList';
 
 function App() {

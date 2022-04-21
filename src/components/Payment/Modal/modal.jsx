@@ -5,9 +5,11 @@ import React, { useState } from 'react';
 import Aproved from '../ValidatePayment/successfulPayment';
 import Rejectd from '../ValidatePayment/unsuccessfulPayment';
 
-function Payment({ username, closeBtn }) {
+function Payment({ username, closeBtn}) {
   // Hooks
 
+  // Atualiza o titulo do modal..
+  const [titleModal, setTitleModal] = useState();
   // Irá ocultar os inputs de select valor e pagamento quando o usuario clicar em pagar
   const [hiddenModal, setHiddeModal] = useState(true);
   // Irá  fazer com que retorne e atualize o modal caso seja aprovado ou recusado..
@@ -16,6 +18,9 @@ function Payment({ username, closeBtn }) {
 
   const addPayment = async (e) => {
     e.preventDefault();
+    let newTitle = document.getElementById('title');
+    setTitleModal((newTitle.innerHTML = 'Recibo de Pagamento'));
+
     setHiddeModal(false);
     const formData = new FormData(e.target);
     const value = formData.get('amountPaid');
@@ -49,7 +54,12 @@ function Payment({ username, closeBtn }) {
         <div className={style.container}>
           <div className={style.modal_container}>
             <div className={style.nav_container}>
-              <h1>
+              <h1
+                id="title"
+                className={style.title_h1}
+                value={titleModal}
+                onChange={addPayment}
+              >
                 Pagamento para:
                 <span className={style.user_fonts}> {username} </span>{' '}
               </h1>
